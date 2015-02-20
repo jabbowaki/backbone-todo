@@ -34,7 +34,21 @@
     </div>
     <input class="edit" value="<%= title %>">
   </script>
-  <script type="text/template" id="stats-template"></script>
+  <script type="text/template" id="stats-template">
+    <span id="todo count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left
+    </span>
+    <ul id ="filters">
+      <li>
+        <a class="selected" href="#/">All</a>
+      </li>
+      <li>
+        <a href="#/completed">Completed</a>
+      </li>
+    </ul>
+    <% if (completed) { %>
+      <button id="clear-completed">Clear completed (<%= completed %>)</button>
+    <% } %>
+  </script>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src ="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
