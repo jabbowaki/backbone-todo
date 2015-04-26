@@ -27,12 +27,12 @@ var TodoList = Backbone.Collection.extend({
     if (!this.length) {
       return 1;
     }
-    return this.last().get('order') +1
+    return this.last().get('order') + 1;
   },
 
   //todos are sorted by insertion order
   comparator: function(todo) {
-    return todo.get('order')
+    return todo.get('order');
   }
 });
 
