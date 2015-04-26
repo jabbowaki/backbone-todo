@@ -16,6 +16,12 @@ var TodoList = Backbone.Collection.extend({
       return todo.get('completed');
     });
   },
+
+  //filters unfinished
+  remaining: function() {
+    return this.without.apply( this, this.completed() );
+  },
+
   //todos are unordered in db, but this generates sequential order
   nextOrder: function() {
     if (!this.length) {

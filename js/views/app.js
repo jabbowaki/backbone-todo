@@ -43,9 +43,10 @@ app.AppView = Backbone.View.extend({
         completed: completed,
         remaining: remaining
       }));
+
       this.$('#filters li a')
         .removeClass('selected')
-        .filter('[href="#' + (app.TodoFilter || "") + '"]')
+        .filter('[href="#' + (app.TodoFilter || '') + '"]')
         .addClass('selected');
     } else {
       this.$main.hide();
@@ -90,6 +91,7 @@ app.AppView = Backbone.View.extend({
     this.$input.val('');
   },
 
+  //destroys the model of completed todo items
   clearCompleted: function() {
     _.invoke(app.Todos.completed(), 'destroy');
     return false;
